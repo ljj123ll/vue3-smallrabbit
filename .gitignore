@@ -1,6 +1,4 @@
-# ==============================================
-# 日志文件
-# ==============================================
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -9,30 +7,33 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# ==============================================
-# 依赖与构建产物
-# ==============================================
-# 依赖目录
+# Dependencies
 node_modules
-# 构建输出目录
+.pnp
+.pnp.js
+
+# Build outputs
 dist
 dist-ssr
 build
-out
-# 临时构建目录
-.temp
-.cache
-.vite
-.nuxt
-.next
-.svelte-kit
-.vuepress/dist
-nuxt-dist
+*.local
 
-# ==============================================
-# 环境变量与敏感信息
-# ==============================================
-# 环境变量文件（保留示例模板）
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/*.code-snippets
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
 .env
 .env.local
 .env.development.local
@@ -40,76 +41,107 @@ nuxt-dist
 .env.production.local
 !.env.example
 
-# ==============================================
-# 包管理相关
-# ==============================================
-# 包管理工具缓存
+# Testing
+coverage
+*.lcov
+.nyc_output
+
+# Temporary files
+*.tmp
+*.temp
+.cache
+.parcel-cache
+.next
+.nuxt
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+.yarn-integrity
+
+# Package manager files
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
-.pnpm-store
-# 锁文件（默认不忽略，如需忽略可取消注释）
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+.yarn/install-state.gz
+.pnp.*
 
-# ==============================================
-# 编辑器与IDE配置
-# ==============================================
-# VS Code（保留扩展配置）
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-# JetBrains系列（WebStorm等）
-.idea
-# Sublime
-*.sublime-project
-*.sublime-workspace
-# 其他编辑器
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# ==============================================
-# 系统文件
-# ==============================================
-# Mac
-.DS_Store
-# Windows
+# OS generated files
 Thumbs.db
-Desktop.ini
-*.local
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# ==============================================
-# 测试与缓存
-# ==============================================
-# 测试报告
-coverage
-# 测试工具缓存
-.jestcache
-.cypress-cache
-.vitest
-cypress/downloads
-cypress/screenshots
-cypress/videos
-# 代码检查缓存
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
 .eslintcache
-.prettiercache
-.stylelintcache
-# 图片缓存
-.imagecache
 
-# ==============================================
-# 其他冗余文件
-# ==============================================
-# 压缩包与备份
-*.zip
-*.tar.gz
-*.bak
-# TypeScript编译产物（未指定outDir时）
-*.js
-*.d.ts
-!*.config.js
-!*.config.ts
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# vuepress build output
+.vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+.cache
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
