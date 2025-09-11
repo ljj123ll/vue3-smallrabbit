@@ -59,4 +59,38 @@ const confirm = () => {
 
 <style scoped lang="scss">
 
+.app-topnav {
+    background: #333;
+    ul {
+        display:flex;
+        height: 53px;
+        // 空间分配
+        justify-content:flex-end;
+        // y上-文字居中于导航栏上
+        align-items:center;
+
+        li {
+            a {
+                padding:0 15px;
+                color:#cdcdcd;
+                // 行高
+                line-height:1;
+                // 内联块级元素
+                display:inline-block;
+                i {
+                    font-size: 14px;
+                    margin-right: 2px;
+                }
+                &:hover {
+                    color: $xtxColor;
+                }
+            }
+            ~ li {
+                a {
+                    border-left:2px solid #666;
+                }
+            }
+        }
+    }
+}
 </style>
