@@ -4,6 +4,7 @@ import { loginAPI } from '@/apis/user'
 import { useCartStore } from './cart'
 import { mergeCartAPI } from '@/apis/cart'
 
+
 // 定义用户状态仓库，存储用户信息
 export const useUserStore = defineStore(
     // 第一个参数，仓库唯一id，pinia通过id区分不同的仓库

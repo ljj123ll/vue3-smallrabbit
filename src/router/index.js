@@ -22,11 +22,11 @@ const router = createRouter({
         }
     ],
     // 路由切换的时候，页面回到顶部
-    scrollBehavior() {
-        return {
-            top: 0
-        }
-    }
+    // scrollBehavior() {
+    //     return {
+    //         top: 0
+    //     }
+    // }
 })
 
 
