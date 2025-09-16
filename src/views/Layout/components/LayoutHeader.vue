@@ -18,7 +18,7 @@
                 v-for="item in categoryStore.categoryList"
                 :key="item.id"
                 >
-                    <RouterLink active-class="active" :to="`/categroy/${item.id}`">
+                    <RouterLink active-class="active" :to="`/category/${item.id}`">
                         <!-- 分类名称 -->
                         {{ item.name }}
                     </RouterLink>
