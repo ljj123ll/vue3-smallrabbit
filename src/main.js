@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import pinia from '@/stores/index.js'
 import App from './App.vue'
 import router from './router'
-// 还有一个自定义指令没有导入
+// 导入懒加载自定义指令
 import { lazyPlugin } from './directives/lazyPlugin'
 
 
