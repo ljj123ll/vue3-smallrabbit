@@ -66,6 +66,7 @@ onMounted(() => getNewGoods())
             font-size: 22px;
             padding-top: 12px;
             text-align: center;
+            text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
         }
@@ -74,6 +75,5 @@ onMounted(() => getNewGoods())
             color: $priceColor;
         }
     }
-
 }
 </style>
