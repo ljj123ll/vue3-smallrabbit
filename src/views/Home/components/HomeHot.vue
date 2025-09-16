@@ -7,7 +7,7 @@
                         <!-- 使用v-img-lazy自定义指令实现懒加载，只有当图片进入视口的时候才进行加载 -->
                         <img v-img-lazy="item.picture" alt="">
                         <p class="name">{{ item.title }}</p>
-                        <p class="desc">&yen;{{ item.alt }}</p>
+                        <p class="desc">{{ item.alt }}</p>
                     </RouterLink>
                 </li>
             </ul>
