@@ -31,7 +31,7 @@
         <h3>全部分类</h3>
         <ul>
           <li v-for="i in categoryData.children" :key="i.id">
-            <RouterLink :to="{ path: `/category/subcategory/sub/${i.id}` }">
+            <RouterLink :to="{ path: `/category/sub/${i.id}` }">
               <img :src="i.picture" alt="" />
               <p>{{ i.name }}</p>
             </RouterLink>
