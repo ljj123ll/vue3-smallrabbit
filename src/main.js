@@ -7,7 +7,6 @@ import router from './router'
 // 导入懒加载自定义指令
 import { lazyPlugin } from './directives/lazyPlugin'
 
-
 const app = createApp(App)
 
 app.use(pinia)

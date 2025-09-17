@@ -4,17 +4,24 @@
 }
 
 html {
-  height: 100%;
   font-size: 14px;
+  height: 100%;
 }
 
 body {
-  height: 100%;
   color: #333;
-  min-width: 1240px;
-  font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI',
-    'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei',
+  font:
+    1em/1.4 'Microsoft Yahei',
+    'PingFang SC',
+    Avenir,
+    'Segoe UI',
+    'Hiragino Sans GB',
+    STHeiti,
+    'Microsoft Sans Serif',
+    'WenQuanYi Micro Hei',
     sans-serif;
+  height: 100%;
+  min-width: 1240px;
 }
 
 body,
@@ -25,14 +32,14 @@ h4,
 p,
 dl,
 dd {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {
-  text-decoration: none;
   color: #333;
   outline: none;
+  text-decoration: none;
 }
 
 i {
@@ -43,10 +50,10 @@ input[type='text'],
 input[type='search'],
 input[type='password'],
 input[type='checkbox'] {
-  padding: 0;
-  outline: none;
-  border: none;
   appearance: none;
+  border: none;
+  outline: none;
+  padding: 0;
 
   &::placeholder {
     color: #ccc;
@@ -54,10 +61,10 @@ input[type='checkbox'] {
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: middle;
   background: #ebebeb url('@/assets/images/200.png') no-repeat center / contain;
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 ul {
@@ -70,24 +77,24 @@ ul {
 }
 
 .container {
-  width: 1240px;
   margin: 0 auto;
   position: relative;
+  width: 1240px;
 }
 
 .ellipsis {
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ellipsis-2 {
-  word-break: break-all;
-  text-overflow: ellipsis;
-  display: -webkit-box;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 .fl {
@@ -98,13 +105,13 @@ ul {
   float: right;
 }
 
-.clearfix:after {
+.clearfix::after {
+  clear: both;
   content: '.';
   display: block;
-  visibility: hidden;
   height: 0;
   line-height: 0;
-  clear: both;
+  visibility: hidden;
 }
 
 // reset element

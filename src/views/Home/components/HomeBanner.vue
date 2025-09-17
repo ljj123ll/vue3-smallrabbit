@@ -1,35 +1,28 @@
 <template>
-<div class="home-banner">
-    <el-carousel 
-    height="500px"
-    motion-blur
-    >
-        <el-carousel-item
-        v-for="item in bannerList"
-        :key="item.id"
-        >
-            <img :src="item.imgUrl" alt="" />
-        </el-carousel-item>
+  <div class="home-banner">
+    <el-carousel height="500px" motion-blur>
+      <el-carousel-item v-for="item in bannerList" :key="item.id">
+        <img :src="item.imgUrl" alt="" />
+      </el-carousel-item>
     </el-carousel>
-</div>
+  </div>
 </template>
 
 <script setup>
-import { getBannerAPI } from '@/apis/home'
-import { ref } from 'vue'
-const bannerList = ref([])
+  import { getBannerAPI } from '@/apis/home'
+  import { ref } from 'vue'
+  const bannerList = ref([])
 
-const getBanner = async () => {
+  const getBanner = async () => {
     const res = await getBannerAPI()
     bannerList.value = res.result
-}
+  }
 
-getBanner()
+  getBanner()
 </script>
 
-
 <style scoped lang="scss">
-.home-banner {
+  .home-banner {
     width: 1240px;
     height: 500px;
     position: absolute;
@@ -38,10 +31,10 @@ getBanner()
     z-index: 98;
 
     img {
-        width: 100%;
-        height: 500px;
-        // 确保图片能够填满容器且不变形
-        object-fit: cover;
+      width: 100%;
+      height: 500px;
+      // 确保图片能够填满容器且不变形
+      object-fit: cover;
     }
-}
+  }
 </style>

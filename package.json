@@ -8,6 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint:style": "stylelint \"src/**/*.{scss,css}\" --fix",
+    "lint:all": "npm run lint && npm run lint:style",
+    "format": "prettier --write .",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
@@ -29,8 +32,15 @@
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "pinia-plugin-persistedstate": "^3.2.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended-scss": "^16.0.1",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-element-plus": "^0.8.0",
     "unplugin-vue-components": "^0.25.2",
@@ -39,7 +49,15 @@
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,html}": [
+      "prettier --write"
     ]
   }
 }

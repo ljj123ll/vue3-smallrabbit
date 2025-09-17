@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite' 
+import Components from 'unplugin-vue-components/vite'
 // element plus解析器和按需加载
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import ElementPlus from 'unplugin-element-plus/vite'
@@ -12,16 +12,14 @@ import ElementPlus from 'unplugin-element-plus/vite'
 export default defineConfig({
   // 配置插件
   plugins: [
-    vue(), 
+    vue(),
     VueDevTools(),
     AutoImport({
       resolvers: [ElementPlusResolver()]
     }),
     // 自动导入element plus组件
     Components({
-      resolvers: [ElementPlusResolver(
-        {importStyle: 'sass'}
-      )]
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })]
     }),
     ElementPlus({
       useSource: true
@@ -38,8 +36,7 @@ export default defineConfig({
       scss: {
         api: 'modern',
         // 自动向所有scss文件注入内容
-        additionalData:
-        `
+        additionalData: `
         @use "@/styles/element/index.scss" as *;
         @use "@/styles/var.scss" as *;
         `
@@ -47,7 +44,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5191,
+    port: 5191
     // 强制用5191，如果被占用会报错（需先关闭占用程序）
     // 或自动尝试端口时，指定起始端口：
     // port: 5191,
