@@ -9,10 +9,9 @@ import { lazyPlugin } from './directives/lazyPlugin'
 
 const app = createApp(App)
 
+// 在挂载应用前注册所有插件和指令
 app.use(pinia)
 app.use(router)
+app.use(lazyPlugin)
 
 app.mount('#app')
-
-// 注册自定义指令
-app.use(lazyPlugin)
