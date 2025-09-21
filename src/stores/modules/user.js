@@ -27,7 +27,7 @@ export const useUserStore = defineStore(
           return {
             skuId: item.skuId,
             selected: item.selected,
-            coun: item.count
+            count: item.count
           }
         })
       )
