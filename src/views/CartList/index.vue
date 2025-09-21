@@ -2,11 +2,13 @@
   // 先导入购物车状态管理和路由组件
   import { onMounted } from 'vue'
   import { useCartStore } from '@/stores'
-  import { RouterLink } from 'vue-router'
+  import { RouterLink, useRouter } from 'vue-router'
   // 创建购物车stores实例，用于访问购物车状态
   const cartStore = useCartStore()
+  // 创建路由实例，用于页面跳转
+  const router = useRouter()
 
-  // 1. 页面挂载时：登录状态下主动同步服务器购物车数据
+  // 页面挂载时：登录状态下主动同步服务器购物车数据
   onMounted(() => {
     if (cartStore.isLogin) {
       cartStore.updateCartList()
@@ -26,6 +28,15 @@
   // 改变购物车中商品的数量
   const handleChangeCount = (skuId, count) => {
     cartStore.changeCount(skuId, count)
+  }
+
+  // 处理结算按钮点击事件
+  const handleCheckout = () => {
+    if (cartStore.isLogin) {
+      router.push('/checkout')
+    } else {
+      router.push('/login')
+    }
   }
 </script>
 
@@ -98,7 +109,7 @@
                     @confirm="cartStore.deleteCart(i.skuId)"
                   >
                     <template #reference>
-                      <a href="#">删除</a>
+                      <span class="delete-link">删除</span>
                     </template>
                   </el-popconfirm>
                 </p>
@@ -126,9 +137,7 @@
           <span class="red">￥ {{ cartStore.selectedPrice.toFixed(2) }}</span>
         </div>
         <div class="total">
-          <el-button size="large" type="primary" @click="$router.push('/checkout')">
-            下单结算
-          </el-button>
+          <el-button size="large" type="primary" @click="handleCheckout">下单结算</el-button>
         </div>
       </div>
     </div>
@@ -242,6 +251,15 @@
           font-size: 14px; // 字体大小14px
           color: #999; // 灰色
         }
+      }
+    }
+
+    .delete-link {
+      // 删除链接样式
+      color: $xtxColor; // 使用品牌色
+      cursor: pointer; // 鼠标悬停显示手形指针
+      &:hover {
+        color: $priceColor; // 鼠标悬停变为价格色
       }
     }
 
