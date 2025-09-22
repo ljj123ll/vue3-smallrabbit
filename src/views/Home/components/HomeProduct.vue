@@ -38,10 +38,10 @@
           <!-- 左侧封面:点击跳转 -->
           <RouterLink class="cover" :to="'/'">
             <img v-img-lazy="cate.picture" />
-            <storng class="label">
+            <strong class="label">
               <span>{{ cate.name }}馆</span>
               <span>{{ cate.saleInfo }}</span>
-            </storng>
+            </strong>
           </RouterLink>
 
           <!-- 右侧商品列表:循环渲染当前分类馆的商品 -->
