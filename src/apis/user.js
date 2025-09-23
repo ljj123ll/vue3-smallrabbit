@@ -22,3 +22,29 @@ export const getLikeAPI = ({ limit = 4 }) => {
     }
   })
 }
+
+// 添加收货地址
+export const addAddressAPI = data => {
+  return request({
+    url: '/member/address',
+    method: 'POST',
+    data
+  })
+}
+
+// 获取收货地址列表
+export const getAddressListAPI = () => {
+  return request({
+    url: '/member/address',
+    method: 'GET'
+  })
+}
+
+// 更新收货地址
+export const updateAddressAPI = (id, data) => {
+  return request({
+    url: `/member/address/${id}`,
+    method: 'PUT',
+    data
+  })
+}

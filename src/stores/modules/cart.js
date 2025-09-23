@@ -141,7 +141,8 @@ export const useCartStore = defineStore(
       selectedPrice, // 勾选商品总价
       changeCount, // 修改数量
       clearCart, // 清空购物车
-      updateCartList // 同步服务器数据
+      updateCartList, // 同步服务器数据
+      isLogin // 登录状态
     }
   },
   {
